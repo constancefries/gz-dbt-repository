@@ -5,7 +5,5 @@ ROUND(SUM(revenue),2) as revenue,
 SUM(quantity) as quantity,
 ROUND(SUM(purchase_cost),2) as purchase_cost,
 ROUND(SUM(margin),2) as margin,
-FROM 
-{{ ref('int_sales_margin')}}
-WHERE orders_id = 1002561
+FROM {{ ref('int_sales_margin')}}
 GROUP BY orders_id, date_date
