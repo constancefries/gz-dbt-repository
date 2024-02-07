@@ -16,7 +16,7 @@ sources:
         description: sales of greenweez / we have one row per products_id found in each orders_id
         tests: 
           - unique:   
-              column_name: "(orders_id || '-' || pdt_id)"
+              column_name: "(orders_id || '-' || pdt_id)" #ici il s'agit de la formulation de la PK : on CONCATENATE 2 colonnes pour avoir une valeur propre pour chaque campaign car il y a des doublons 
         columns:
           - name: date_date
             description: the date of the purchase
@@ -59,10 +59,19 @@ sources:
       - name: adwords
         identifier: raw_gz_adwords
         description: ad
+        tests: 
+          - unique:   
+              column_name: "(date_date || '_' || campaign_key)" #ici il s'agit de la formulation de la PK : on CONCATENATE 2 colonnes pour avoir une valeur propre pour chaque campaign car il y a des doublons 
         columns:
-          - name: date_date
+          - name: date_date #je mets uniquet et not null pour chaque colonne des autres tables concernées par la primary key
+            tests:
+              - unique
+              - not_null
           - name: paid_source
-          - name: campaign_key
+          - name: campaign_key #je mets uniquet et not null pour chaque colonne des autres tables concernées par la primary key
+            tests:
+              - unique
+              - not_null
           - name: camPGN_name
           - name: ads_cost
           - name: impression
@@ -71,9 +80,15 @@ sources:
         identifier: raw_gz_bing
         description: bing
         columns:
-          - name: date_date
+          - name: date_date #je mets uniquet et not null pour chaque colonne des autres tables concernées par la primary key
+            tests:
+              - unique
+              - not_null
           - name: paid_source
-          - name: campaign_key
+          - name: campaign_key #je mets uniquet et not null pour chaque colonne des autres tables concernées par la primary key
+            tests:
+              - unique
+              - not_null
           - name: camPGN_name
           - name: ads_cost
           - name: impression
@@ -82,9 +97,15 @@ sources:
         identifier: raw_gz_criteo
         description: criteo
         columns:
-          - name: date_date
+          - name: date_date #je mets uniquet et not null pour chaque colonne des autres tables concernées par la primary key
+            tests:
+              - unique
+              - not_null
           - name: paid_source
-          - name: campaign_key
+          - name: campaign_key #je mets uniquet et not null pour chaque colonne des autres tables concernées par la primary key
+            tests:
+              - unique
+              - not_null
           - name: camPGN_name
           - name: ads_cost
           - name: impression
@@ -93,9 +114,15 @@ sources:
         identifier: raw_gz_facebook
         description: facebook
         columns:
-          - name: date_date
+          - name: date_date #je mets uniquet et not null pour chaque colonne des autres tables concernées par la primary key
+            tests:
+              - unique
+              - not_null
           - name: paid_source
-          - name: campaign_key
+          - name: campaign_key #je mets uniquet et not null pour chaque colonne des autres tables concernées par la primary key
+            tests:
+              - unique
+              - not_null
           - name: camPGN_name
           - name: ads_cost
           - name: impression
