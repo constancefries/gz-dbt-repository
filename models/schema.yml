@@ -134,5 +134,13 @@ sources:
           - name: ads_cost
           - name: ads_impression
           - name: ads_clicks
+      - name: finance_campaigns_day
+        identifier: finance_campaigns_day
+        columns:
+          - name: date_date,
+          - name: ads_margin
+          - name: operational_margin
+          - name: ads_cost
+          - name: average_basket
           
         
