@@ -9,7 +9,7 @@ source as (
 renamed as (
 
     select
-        date_date,
+        date_date as datemonth,
         paid_source,
         campaign_key,
         campgn_name AS campaign_name,

@@ -9,7 +9,7 @@ source as (
 renamed as (
 
     select
-        date_date,
+        date_date as datemonth,
         orders_id,
         pdt_id AS products_id,
         revenue,
