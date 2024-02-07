@@ -127,5 +127,12 @@ sources:
           - name: ads_cost
           - name: impression
           - name: click
+      - name: campaign_days
+        identifier: int_campaigns_days
+        columns:
+          - name: date_date
+          - name: ads_cost
+          - name: ads_impression
+          - name: ads_clicks
           
         
